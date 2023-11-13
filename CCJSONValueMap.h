@@ -18,6 +18,8 @@ public:
 
 	std::string getSaveString();
 	ValueMap getValueMap() { return _valueMap; }
+        Value getValueForKey(const std::string& key) { return _valueMap.at(key); }
+	void setValueForKey(Value value, const std::string& key) { _valueMap.emplace(key, value); }
 
 	bool writeToFile(const char* filePath);
 };
